@@ -64,7 +64,14 @@ public class FlexUISelenium {
 		return flashApp.call("getFlexText", objId, "");
 	}
 	
-		
+	public boolean isChecked(String checkBoxId) {
+		return Boolean.parseBoolean(flashApp.call("getFlexCheckBoxChecked", checkBoxId, "")); 	
+	}
+	
+	public void doubleClick(String objId) {
+		flashApp.call("doFlexDoubleClick", objId, "");
+	}
+
 	
 	
 }
