@@ -19,14 +19,14 @@ import com.thoughtworks.selenium.Selenium;
 public class FlexUISeleniumTest {
 	private final static String URL = "http://www.geocities.com/paulocaroli/flash/sum.html";
 	private Selenium selenium;
-	private FlexUISelenium flexUI;
+	private FlexUISelenium flexUITester;
 	
 	@Before
 	public void setUp() throws Exception {
 		selenium = new DefaultSelenium("localhost", 4444, "*iexplore",URL);
 		selenium.start();
 		selenium.open(URL);
-		flexUI = new FlexUISelenium(selenium, "compareSumFlexObjId");
+		flexUITester = new FlexUISelenium(selenium, "compareSumFlexObjId");
 	}
 
 	@After
@@ -36,10 +36,10 @@ public class FlexUISeleniumTest {
 
 	@Test
 	public void verifyFlexAppSumIsCorrect() {
-		flexUI.type("2").at("arg1");
-		flexUI.type("3").at("arg2");
-		flexUI.click("submit");
-		assertEquals("5", flexUI.readFrom("result"));		
+		flexUITester.type("2").at("arg1");
+		flexUITester.type("3").at("arg2");
+		flexUITester.click("submit");
+		assertEquals("5", flexUITester.readFrom("result"));		
 	}
 	
 }
