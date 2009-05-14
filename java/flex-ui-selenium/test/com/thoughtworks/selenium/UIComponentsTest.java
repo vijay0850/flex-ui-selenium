@@ -6,7 +6,24 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * The tests run against a Flex application with the followign code:
+ * 
 
+   <?xml version="1.0" encoding="utf-8"?>
+    <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute">
+	<mx:CheckBox x="90" y="39" id="CheckboxId" label="Checkbox"/>
+	<mx:TextInput x="61" y="113" id="TextInput1Id" text="TextInput content" />
+	<mx:TextInput x="61" y="193" id="TextInput2Id" />
+	<mx:Button x="82" y="154" id="ButtonId" label="Copy to TextInput2" 
+		click="TextInput2Id.text=TextInput1Id.text"
+		/>
+	<mx:TextArea x="61" y="275" id="TextAreaId"/>
+	
+   </mx:Application>
+   
+   IMPORTANT: the application is built with FlexSEleniumAPI.swc
+ */	
 public class UIComponentsTest {
 	private final static String URL = "http://localhost/sampleUIcomponents1/sampleUIcomponents1.html";
 	private Selenium selenium;
