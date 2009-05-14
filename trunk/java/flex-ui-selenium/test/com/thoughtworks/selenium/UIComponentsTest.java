@@ -27,15 +27,15 @@ import org.junit.Test;
 public class UIComponentsTest {
 	private final static String URL = "http://localhost/sampleUIcomponents1/sampleUIcomponents1.html";
 	private Selenium selenium;
-	private FlexUISelenium flexUI;
+	private FlexUISelenium testerDude;
 	
 	@Before
 	public void setUp() throws Exception {
 		selenium = new DefaultSelenium("localhost", 4444, "*iexplore",URL);
 		selenium.start();
 		selenium.open(URL);
-		flexUI = new FlexUISelenium(selenium, "sampleUIcomponents1");
-		flexUI.waitUntilLoaded();
+		testerDude = new FlexUISelenium(selenium, "sampleUIcomponents1");
+		testerDude.waitUntilLoaded();
 	}
 
 	@After
@@ -49,7 +49,7 @@ public class UIComponentsTest {
      */	
 	@Test
 	public void readText() {
-		assertEquals("TextInput content", flexUI.text("TextInput1Id"));		
+		assertEquals("TextInput content", testerDude.readFrom("TextInput1Id"));		
 	}
 
     /**
@@ -58,9 +58,9 @@ public class UIComponentsTest {
      */	
 	@Test
 	public void writeText() {
-		assertEquals("", flexUI.text("TextAreaId"));		
-		flexUI.type("TextAreaId", "test typed");
-		assertEquals("test typed", flexUI.text("TextAreaId"));		
+		assertEquals("", testerDude.readFrom("TextAreaId"));		
+		testerDude.type("test typed").at("TextAreaId");
+		assertEquals("test typed", testerDude.readFrom("TextAreaId"));		
 	}
 
     /**
@@ -72,9 +72,9 @@ public class UIComponentsTest {
      */
 	@Test
 	public void clickOnButton() {
-		assertFalse(flexUI.text("TextInput1Id").equals(flexUI.text("TextInput2Id")));		
-		flexUI.click("ButtonId");
-		assertEquals(flexUI.text("TextInput1Id"), flexUI.text("TextInput2Id"));		
+		assertFalse(testerDude.readFrom("TextInput1Id").equals(testerDude.readFrom("TextInput2Id")));		
+		testerDude.click("ButtonId");
+		assertEquals(testerDude.readFrom("TextInput1Id"), testerDude.readFrom("TextInput2Id"));		
 	}
 	
     /**
@@ -96,9 +96,9 @@ public class UIComponentsTest {
 	}
 	
 	private void notClickedClickClicked(String checkBoxId) {
-		assertFalse(flexUI.isChecked(checkBoxId));		
-		flexUI.click(checkBoxId);
-		assertTrue(flexUI.isChecked(checkBoxId));
+		assertFalse(testerDude.isChecked(checkBoxId));		
+		testerDude.click(checkBoxId);
+		assertTrue(testerDude.isChecked(checkBoxId));
 	}	
 	
 
