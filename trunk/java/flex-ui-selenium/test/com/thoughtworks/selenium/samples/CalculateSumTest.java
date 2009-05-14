@@ -12,15 +12,15 @@ import com.thoughtworks.selenium.Selenium;
 public class CalculateSumTest {
 	private final static String URL = "http://www.geocities.com/paulocaroli/flash/sum.html";
 	private Selenium selenium;
-	private FlexUISelenium flexUI;
+	private FlexUISelenium flexUITester;
 	
 	@Before
 	public void setUp() throws Exception {
 		selenium = new DefaultSelenium("localhost", 4444, "*iexplore",URL);
 		selenium.start();
 		selenium.open(URL);
-		flexUI = new FlexUISelenium(selenium, "compareSumFlexObjId");
-		flexUI.waitUntilLoaded();
+		flexUITester = new FlexUISelenium(selenium, "compareSumFlexObjId");
+		flexUITester.waitUntilLoaded();
 	}
 
 	@After
@@ -30,23 +30,23 @@ public class CalculateSumTest {
 
 	@Test
 	public void sumForValidNumbers() {
-		flexUI.type("arg1", "2");
-		flexUI.type("arg2", "3");
-		flexUI.click("submit");
-		assertEquals("5", flexUI.readFrom("result"));		
+		flexUITester.type("2").at("arg1");
+		flexUITester.type("3").at("arg2");
+		flexUITester.click("submit");
+		assertEquals("5", flexUITester.readFrom("result"));		
 
-		flexUI.type("arg1", "-2");
-		flexUI.type("arg2", "-3");
-		flexUI.click("submit");
-		assertEquals("-5", flexUI.readFrom("result"));		
+		flexUITester.type("-2").at("arg1");
+		flexUITester.type("-3").at("arg2");
+		flexUITester.click("submit");
+		assertEquals("-5", flexUITester.readFrom("result"));		
 	}
 
 	@Test
 	public void sumForUnvalidNumbers() {
-		flexUI.type("arg1", "Not a Number");
-		flexUI.type("arg2", "3");
-		flexUI.click("submit");
-		assertEquals("NaN", flexUI.readFrom("result"));		
+		flexUITester.type("Not a Number").at("arg1");
+		flexUITester.type("3").at("arg2");
+		flexUITester.click("submit");
+		assertEquals("NaN", flexUITester.readFrom("result"));		
 	}
 	
 }
