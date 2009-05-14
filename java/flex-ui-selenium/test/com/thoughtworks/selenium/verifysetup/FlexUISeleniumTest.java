@@ -36,10 +36,10 @@ public class FlexUISeleniumTest {
 
 	@Test
 	public void verifyFlexAppSumIsCorrect() {
-		flexUI.type("arg1", "2");
-		flexUI.type("arg2", "3");
+		flexUI.type("2").at("arg1");
+		flexUI.type("3").at("arg2");
 		flexUI.click("submit");
-		assertEquals("5", flexUI.text("result"));		
+		assertEquals("5", flexUI.readFrom("result"));		
 	}
 	
 }

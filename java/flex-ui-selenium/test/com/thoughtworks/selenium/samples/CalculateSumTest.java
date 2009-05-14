@@ -33,12 +33,12 @@ public class CalculateSumTest {
 		flexUI.type("arg1", "2");
 		flexUI.type("arg2", "3");
 		flexUI.click("submit");
-		assertEquals("5", flexUI.text("result"));		
+		assertEquals("5", flexUI.readFrom("result"));		
 
 		flexUI.type("arg1", "-2");
 		flexUI.type("arg2", "-3");
 		flexUI.click("submit");
-		assertEquals("-5", flexUI.text("result"));		
+		assertEquals("-5", flexUI.readFrom("result"));		
 	}
 
 	@Test
@@ -46,7 +46,7 @@ public class CalculateSumTest {
 		flexUI.type("arg1", "Not a Number");
 		flexUI.type("arg2", "3");
 		flexUI.click("submit");
-		assertEquals("NaN", flexUI.text("result"));		
+		assertEquals("NaN", flexUI.readFrom("result"));		
 	}
 	
 }
