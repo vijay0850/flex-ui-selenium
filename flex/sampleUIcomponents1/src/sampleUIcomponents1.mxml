@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute">
+	<mx:CheckBox x="90" y="39" id="CheckboxId" label="Checkbox"/>
+	<mx:TextInput x="61" y="113" id="TextInput1Id" text="TextInput content" />
+	<mx:TextInput x="61" y="193" id="TextInput2Id" />
+	<mx:Button x="82" y="154" id="ButtonId" label="Copy to TextInput2" 
+		click="TextInput2Id.text=TextInput1Id.text"
+		/>
+	<mx:TextArea x="61" y="275" id="TextAreaId"/>
+	
+</mx:Application>
