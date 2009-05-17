@@ -9,7 +9,7 @@ A history of changes to flex-ui-selenium.
     * _boolean isChecked(String checkBoxId)_ 
     * _void doubleClick(String objId)_ 
     * void type(String text).at(String objectId)
-        * _TypeableObject type(String text)_
+        * _!TypeableObject type(String text)_
         * _void at(String objectId)_
 
 = 0.1.0 =
