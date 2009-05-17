@@ -1,7 +1,4 @@
-# A history of changes to flex-ui-selenium.
-
-= ChangeLog =
-
+#labels Featured,Phase-Requirements
 A history of changes to flex-ui-selenium.
 
 
