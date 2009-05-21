@@ -13,7 +13,6 @@ import com.thoughtworks.selenium.Selenium;
  * selenium-server is running
  * selenium-java-client-driver.jar and junit.jar have been added to the project or classpath
  * flashselenium.jar has been added to the project or classpath
- * flashselenium.jar has been added to the project or classpath
  * flex-ui-selenium.jar has been added to the project or classpath
  */
 public class FlexUISeleniumTest {

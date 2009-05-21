@@ -9,6 +9,14 @@ import com.thoughtworks.selenium.FlexUISelenium;
 import com.thoughtworks.selenium.Selenium;
 
 
+/**
+ * sample Selenium rC test case running against a felx application
+ * The pre-requisites for runnign this testr case are: 
+ * selenium-server is running
+ * selenium-java-client-driver.jar and junit.jar have been added to the project or classpath
+ * flashselenium.jar has been added to the project or classpath
+ * flex-ui-selenium.jar has been added to the project or classpath
+ */
 public class CalculateSumTest {
 	private final static String URL = "http://www.geocities.com/paulocaroli/flash/sum.html";
 	private Selenium selenium;
