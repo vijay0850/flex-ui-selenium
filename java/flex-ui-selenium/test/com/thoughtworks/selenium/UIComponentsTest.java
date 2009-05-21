@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * The tests run against a Flex application with the followign code:
+ * The tests run against a Flex application with the following code:
  * 
 
    <?xml version="1.0" encoding="utf-8"?>
